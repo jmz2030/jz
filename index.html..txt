@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع العقارات المميز</title>
+    <style>
+        body {
+            font-family: 'Droid Arabic Kufi', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header, footer {
+            background-color: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        nav a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #004080;
+        }
+        .search-advanced {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+        .search-advanced h2 {
+            font-size: 1.5em;
+            color: #004080;
+            margin-bottom: 10px;
+        }
+        .search-advanced form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .search-advanced form div {
+            flex: 1 1 45%;
+            margin: 10px 0;
+        }
+        .search-advanced form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .search-advanced form input, 
+        .search-advanced form select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-advanced form button {
+            background-color: #004080;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .search-advanced form button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>موقع العقارات المميز</h1>
+        <p>التسويق العقاري الإلكتروني والوساطة العقارية العالمية</p>
+    </header>
+    <nav>
+        <a href="#services">الخدمات</a>
+        <a href="#properties">العقارات</a>
+        <a href="#membership">العضويات</a>
+        <a href="#contact">تواصل معنا</a>
+        <a href="#app">التطبيق</a>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>مرحباً بكم في موقع العقارات المميز</h1>
+            <p>نقدم لكم أفضل خدمات التسويق العقاري والوساطة العقارية في السعودية ودول الخليج</p>
+            <video controls>
+                <source src="your-video.mp4" type="video/mp4">
+                فيديو تعريفي بالموقع
+            </video>
+        </div>
+        
+        <!-- قسم البحث المتقدم -->
+        <div class="search-advanced">
+            <h2>البحث المتقدم</h2>
+            <form id="search-form" action="/search" method="GET">
+                <div>
+                    <label for="location">الموقع</label>
+                    <input type="text" id="location" name="location" placeholder="أدخل الموقع">
+                </div>
+                <div>
+                    <label for="property-type">نوع العقار</label>
+                    <select id="property-type" name="property-type">
+                        <option value="apartment">شقة</option>
+                        <option value="villa">فيلا</option>
+                        <option value="commercial">تجاري</option>
+                        <option value="land">أرض</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="price-min">السعر الأدنى</label>
+                    <input type="number" id="price-min" name="price-min" placeholder="أدخل السعر الأدنى">
+                </div>
+                <div>
+                    <label for="price-max">السعر الأقصى</label>
+                    <input type="number" id="price-max" name="price-max" placeholder="أدخل السعر الأقصى">
+                </div>
+                <div>
+                    <label for="bedrooms">عدد غرف النوم</label>
+                    <input type="number" id="bedrooms" name="bedrooms" placeholder="أدخل عدد غرف النوم">
+                </div>
+                <div>
+                    <label for="bathrooms">عدد الحمامات</label>
+                    <input type="number" id="bathrooms" name="bathrooms" placeholder="أدخل عدد الحمامات">
+                </div>
+                <div>
+                    <label for="area">المساحة (متر مربع)</label>
+                    <input type="number" id="area" name="area" placeholder="أدخل المساحة">
+                </div>
+                <div>
+                    <label for="amenities">الخدمات</label>
+                    <input type="text" id="amenities" name="amenities" placeholder="مثل: مسبح، موقف سيارات، إلخ.">
+                </div>
+                
+                <!-- خيارات الفرز والترتيب -->
+                <div>
+                    <label for="sort-by">الفرز حسب</label>
+                    <select id="sort-by" name="sort-by">
+                        <option value="price">السعر</option>
+                        <option value="area">المساحة</option>
+                        <option value="date">تاريخ الإضافة</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="order">ترتيب</label>
+                    <select id="order" name="order">
+                        <option value="asc">تصاعدي</option>
+                        <option value="desc">تنازلي</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <button type="submit">بحث</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- بقية المحتوى هنا -->
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 موقع العقارات المميز. جميع الحقوق محفوظة.</p>
+    </footer>
+    
+    <!-- JavaScript لحفظ واستعادة التفضيلات -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // استعادة التفضيلات من Local Storage
+            const location = localStorage.getItem('location');
+            const propertyType = localStorage.getItem('property-type');
+            const priceMin = localStorage.getItem('price-min');
+            const priceMax = localStorage.getItem('price-max');
+            const bedrooms = localStorage.getItem('bedrooms');
+            const bathrooms = localStorage.getItem('bathrooms');
+            const area = localStorage.getItem('area');
+            const amenities = localStorage.getItem('amenities');
+            const sortBy = localStorage.getItem('sort-by');
+            const order = localStorage.getItem('order');
+            
+            if (location) document.getElementById('location').value = location;
+            if (propertyType) document.getElementById('property-type').value = propertyType;
+            if (priceMin) document.getElementById('price-min').value = priceMin;
+            if (priceMax) document.getElementById('price-max').value = priceMax;
+            if (bedrooms) document.getElementById('bedrooms').value = bedrooms;
+            if (bathrooms) document.getElementById('bathrooms').value = bathrooms;
+            if (area) document.getElementById('area').value = area;
+            if (amenities) document.getElementById('amenities').value = amenities;
+            if (sortBy) document.getElementById('sort-by').value = sortBy;
+            if (order) document.getElementById('order').value = order;
+            
+            // حفظ التفضيلات في Local Storage عند تقديم النموذج
+            document.getElementById('search-form').addEventListener('submit', function() {
+                localStorage.setItem('location', document.getElementById('location').value);
+                localStorage.setItem('property-type', document.getElementById('property-type').value);
+                localStorage.setItem('price-min', document.getElementById('price-min').value);
+                localStorage.setItem('price-max', document.getElementById('price-max').value);
+                localStorage.setItem('bedrooms', document.getElementById('bedrooms').value);
+                localStorage.setItem('bathrooms', document.getElementById('bathrooms').value);
+                localStorage.setItem('area', document.getElementById('area').value);
+                localStorage.setItem('amenities', document.getElementById('amenities').value);
+                localStorage.setItem('sort-by', document.getElementById('sort-by').value);
+                localStorage.setItem('order', document.getElementById('order').value);
+            });
+        });
+    </script>
+</body>
+</html>
